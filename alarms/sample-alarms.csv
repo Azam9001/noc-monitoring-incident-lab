@@ -1,0 +1,7 @@
+alarm_id,timestamp_local,site_id,technology,network_element,alarm_name,severity,status,incident_id
+ALM-1001,2026-11-18T08:10:00,SITE-A01,4G/LTE,A01-L1,Cell Unavailable,Critical,Cleared,INC-001
+ALM-1002,2026-11-18T08:12:00,SITE-A01,4G/LTE,A01-L1,Remote Unit Communication Failure,Major,Cleared,INC-001
+ALM-1003,2026-11-18T09:05:00,SITE-B02,3G/UMTS,B02-U1,Transport Link Down,Critical,Cleared,INC-002
+ALM-1004,2026-11-18T09:07:00,SITE-B02,3G/UMTS,B02-U1,NodeB Unreachable,Major,Cleared,INC-002
+ALM-1005,2026-11-18T11:20:00,SITE-C03,2G/GSM,C03-G1,TRX Performance Degraded,Minor,Monitoring,INC-003
+ALM-1006,2026-11-18T11:45:00,SITE-C03,2G/GSM,C03-G1,TRX Performance Degraded,Minor,Cleared,INC-003
