@@ -12,7 +12,7 @@ Das Repository dokumentiert drei miteinander verbundene Lernbereiche:
 2. **Network Infrastructure:** IPv4-Subnetting, VLANs, Routing, DNS/DHCP und Windows-Diagnose.
 3. **Linux & Monitoring:** Linux-Netzwerkdiagnose sowie Entwürfe für Zabbix-/SNMP-Monitoring.
 
-**Nachvollziehbarer technischer Teil:** Ein kleines, lokales Python-Skript zählt synthetische Alarm-Einträge aus CSV; ein Unit-Test überprüft die erwarteten Ergebnisse. Es findet **kein Netzwerkzugriff** statt.
+**Nachvollziehbarer technischer Teil:** Ein kleines, lokal ausführbares Java-17-Programm zählt synthetische Alarm-Einträge aus CSV; Java-Tests überprüfen die erwarteten Ergebnisse. Es findet **kein Netzwerkzugriff** statt.
 
 ## 1. NOC Monitoring & Incident Management
 
@@ -57,18 +57,17 @@ Das Repository dokumentiert drei miteinander verbundene Lernbereiche:
 
 ## 4. Lokale CSV-Auswertung und Tests
 
-**Voraussetzung:** Python 3.9+; ausschließlich Standardbibliothek.
+**Voraussetzung:** JDK 17+; nur Java-Standardbibliothek, kein Maven oder Gradle.
 
 ```bash
-python3 scripts/analyze_alarms.py
-python3 -m unittest discover -s tests -v
+javac -d java/out java/src/AlarmAnalysis.java java/test/AlarmAnalysisTest.java
+java -cp java/out AlarmAnalysis
+java -cp java/out AlarmAnalysisTest
 ```
 
-Unter Windows kann stattdessen `py -3` verwendet werden.
-
-- [Skript](scripts/analyze_alarms.py)
-- [Unit-Test](tests/test_alarm_analysis.py)
-- [Ausführungsanleitung](scripts/README.md)
+- [Java-Quellcode](java/src/AlarmAnalysis.java)
+- [Java-Test](java/test/AlarmAnalysisTest.java)
+- [Ausführungsanleitung](java/README.md)
 - [GitHub-Actions-Workflow](.github/workflows/check-alarm-data.yml)
 
 **Erwartete Beispielstatistik:** 6 CSV-Ereigniseinträge, 3 eindeutige Incidents und 3 fiktive Standorte; Severity: Critical 2, Major 2, Minor 2. Diese Werte sind **kein Live-Monitoring**.
