@@ -1,0 +1,5 @@
+event_id,timestamp_local,host,metric_or_event,severity,value,status,incident_id
+MON-001,2026-11-18T10:00:00,LINUX-LAB-01,cpu_utilization_percent,Warning,88,Open,LAB-MON-001
+MON-002,2026-11-18T10:06:00,LINUX-LAB-01,cpu_utilization_percent,Information,51,Recovered,LAB-MON-001
+MON-003,2026-11-18T11:20:00,NET-LAB-01,interface_link_down,Critical,down,Open,LAB-MON-002
+MON-004,2026-11-18T11:29:00,NET-LAB-01,interface_link_up,Information,up,Recovered,LAB-MON-002
