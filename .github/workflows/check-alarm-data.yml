@@ -1,0 +1,32 @@
+name: Check simulated alarm data
+
+on:
+  push:
+    paths:
+      - 'alarms/sample-alarms.csv'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/check-alarm-data.yml'
+  pull_request:
+    paths:
+      - 'alarms/sample-alarms.csv'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/check-alarm-data.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Print simulated summary
+        run: python scripts/analyze_alarms.py
