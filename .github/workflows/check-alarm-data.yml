@@ -1,17 +1,15 @@
-name: Check simulated alarm data
+name: Check simulated alarm data (Java)
 
 on:
   push:
     paths:
       - 'alarms/sample-alarms.csv'
-      - 'scripts/**'
-      - 'tests/**'
+      - 'java/**'
       - '.github/workflows/check-alarm-data.yml'
   pull_request:
     paths:
       - 'alarms/sample-alarms.csv'
-      - 'scripts/**'
-      - 'tests/**'
+      - 'java/**'
       - '.github/workflows/check-alarm-data.yml'
   workflow_dispatch:
 
@@ -22,11 +20,14 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
         with:
-          python-version: '3.11'
-      - name: Unit tests
-        run: python -m unittest discover -s tests -v
-      - name: Print simulated summary
-        run: python scripts/analyze_alarms.py
+          distribution: temurin
+          java-version: '17'
+      - name: Compile Java source and test
+        run: javac -d java/out java/src/AlarmAnalysis.java java/test/AlarmAnalysisTest.java
+      - name: Run Java tests
+        run: java -cp java/out AlarmAnalysisTest
+      - name: Print synthetic alarm summary
+        run: java -cp java/out AlarmAnalysis
