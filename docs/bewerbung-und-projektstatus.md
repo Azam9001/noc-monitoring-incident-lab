@@ -2,7 +2,7 @@
 
 ## Kurzbeschreibung für den Lebenslauf
 
-**GitHub-Portfolio – NOC Monitoring & Network Troubleshooting:** Selbst erstellte Dokumentations- und Lernsimulationen zu Alarmkorrelation, Incident-Triage, Eskalation, Schichtübergabe, IPv4, VLAN, Routing, DNS/DHCP sowie Linux-/Zabbix-/SNMP-Grundlagen. Ein Python-Skript wertet fiktive Alarmdaten lokal aus.
+**GitHub-Portfolio – NOC Monitoring & Network Troubleshooting:** Selbst erstellte Dokumentations- und Lernsimulationen zu Alarmkorrelation, Incident-Triage, Eskalation, Schichtübergabe, IPv4, VLAN, Routing, DNS/DHCP sowie Linux-/Zabbix-/SNMP-Grundlagen. Ein Java-17-Programm wertet fiktive Alarmdaten lokal aus.
 
 ## Abgrenzung gegenüber realer Berufserfahrung
 
@@ -14,7 +14,7 @@
 
 - Strukturierte deutschsprachige technische Dokumentation.
 - Verständnis grundlegender NOC- und Netzwerkprozesse.
-- Reproduzierbare, einfache CSV-Auswertung mit Python-Standardbibliothek samt Tests.
+- Reproduzierbare, einfache CSV-Auswertung mit der Java-Standardbibliothek samt automatisierbaren Tests.
 
 ## Was es ausdrücklich NICHT belegt
 
